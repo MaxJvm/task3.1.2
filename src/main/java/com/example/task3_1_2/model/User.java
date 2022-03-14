@@ -19,6 +19,8 @@ public class User implements UserDetails {
     @Column(unique = true)
     private String username;
 
+    private int age;
+
     private String password;
 
     @Column(name = "name")
@@ -38,8 +40,9 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String username, String password, String firstName, String lastName) {
+    public User(String username, int age, String password, String firstName, String lastName) {
         this.username = username;
+        this.age = age;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;

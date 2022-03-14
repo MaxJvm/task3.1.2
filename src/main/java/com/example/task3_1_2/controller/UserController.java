@@ -54,8 +54,8 @@ public class UserController {
 
     @PostMapping("/save/{id}")
     public String saveUser(@PathVariable long id, @RequestParam String name, @RequestParam String surname,
-                           @RequestParam String username, @RequestParam String password, @RequestParam String roles) {
-        User user = new User(username, password, name, surname);
+                           @RequestParam String username, @RequestParam String password, @RequestParam String roles, @RequestParam int age) {
+        User user = new User(username, age, password, name, surname);
         String[] names = roles.split("\\s");
         List<Role> roleList = new ArrayList<>();
         for (String n : names) {
